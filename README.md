@@ -62,6 +62,7 @@ GitHub is the online service.
 
 ```bash
 git --version
+```bash
 
 If Git is installed, the version number will be displayed.
 
@@ -88,9 +89,10 @@ Install Git on Windows
 
 Install Git on Linux
 
+```bash
 sudo apt update
 sudo apt install git
-
+```bash
 
 ---
 
@@ -104,6 +106,7 @@ brew install git
 5. Initial Git Configuration
 
 Configure Git once after installation.
+```bash
 
 Set username:
 
@@ -116,7 +119,7 @@ git config --global user.email "youremail@example.com"
 Verify configuration:
 
 git config --list
-
+```bash
 
 ---
 
@@ -124,7 +127,9 @@ git config --list
 
 Initialize a Repository
 
+```bash
 git init
+```bash
 
 This creates a .git directory that stores version history.
 
@@ -133,8 +138,9 @@ This creates a .git directory that stores version history.
 
 Check Repository Status
 
+```bash
 git status
-
+```bash
 
 ---
 
@@ -159,19 +165,20 @@ Add Files to Staging Area
 
 Add a single file:
 
+```bash
 git add filename
 
 Add all files:
 
 git add .
-
+```bash
 
 ---
 
 Commit Changes
-
+```bash
 git commit -m "Commit message"
-
+```bash
 
 ---
 
@@ -196,13 +203,13 @@ Create a Repository on GitHub
 ---
 
 Connect Local Repository to GitHub
-
+```bash
 git remote add origin https://github.com/username/repository-name.git
 
 Check remote:
 
 git remote -v
-
+```bash
 
 ---
 
@@ -216,16 +223,16 @@ The -u flag sets the upstream branch.
 ---
 
 10. Pulling Code from GitHub
-
+```bash
 git pull origin main
-
+```bash
 
 ---
 
 11. Branching in Git
 
 Create a Branch
-
+```bash
 git branch new-branch
 
 Switch branch:
@@ -235,7 +242,7 @@ git checkout new-branch
 Create and switch:
 
 git checkout -b new-branch
-
+```bash
 
 ---
 
