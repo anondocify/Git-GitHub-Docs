@@ -1,365 +1,205 @@
-# Complete Git & GitHub Guide
+*Complete Git & GitHub Guide*
 
-This guide explains **Git and GitHub from scratch**, covering installation, configuration, version control concepts, daily workflow, branching, collaboration, and best practices.  
-No prior knowledge is required.
+*Introduction*
 
----
+*What is Git?*
+Git is a *distributed version control system* used to track changes in files and source code over time. It helps developers save different versions of a project, compare changes, and safely collaborate with others.
 
-## 1. Introduction
+- Track changes in files
+- Maintain complete project history
+- Revert to previous versions
+- Work safely without losing data
+- Collaborate with multiple developers
 
-### What is Git?
+*What is GitHub?*
+GitHub is an *online platform* that hosts Git repositories. It allows developers to store projects remotely and collaborate using Git.
 
-Git is a **distributed version control system** used to track changes in files and source code over time.  
-It helps developers save different versions of a project, compare changes, and safely collaborate with others.
+- Remote storage for repositories
+- Team collaboration
+- Pull requests and code reviews
+- Issue tracking
+- Public and private repositories
 
-Git helps you to:
-- Track changes in files  
-- Maintain complete project history  
-- Revert to previous versions  
-- Work safely without losing data  
-- Collaborate with multiple developers  
+*Git* → Version control tool
+*GitHub* → Online hosting service for Git repositories
 
----
+*Why Use Git and GitHub*
 
-### What is GitHub?
+- Version control for source code
+- Team collaboration
+- Backup and recovery
+- Project sharing
+- Industry-standard development workflow
+- Open-source contribution
 
-GitHub is an **online platform** that hosts Git repositories.  
-It allows developers to store projects remotely and collaborate using Git.
+*Prerequisites*
 
-GitHub provides:
-- Remote storage for repositories  
-- Team collaboration  
-- Pull requests and code reviews  
-- Issue tracking  
-- Public and private repositories  
+- Computer (Windows, Linux, or macOS)
+- Internet connection
+- GitHub account
+- Basic command-line knowledge (optional)
 
-**Git** → Version control tool  
-**GitHub** → Online hosting service for Git repositories  
+*Installing Git*
 
----
-
-## 2. Why Use Git and GitHub
-
-- Version control for source code  
-- Team collaboration  
-- Backup and recovery  
-- Project sharing  
-- Industry-standard development workflow  
-- Open-source contribution  
-
----
-
-## 3. Prerequisites
-
-- Computer (Windows, Linux, or macOS)  
-- Internet connection  
-- GitHub account  
-- Basic command-line knowledge (optional)  
-
----
-
-## 4. Installing Git
-
-Check if Git Is Installed
-
+*Check if Git Is Installed*
 git --version
 
 If Git is installed, the version number will appear.
 
-
----
-
-Install Git on Windows
-
+*Install Git on Windows*
 1. Download Git from https://git-scm.com
-
-
 2. Run the installer
-
-
 3. Use default settings
-
-
 4. Finish installation
 
-
-
-
----
-
-Install Git on Linux
-
+*Install Git on Linux*
 sudo apt update
 sudo apt install git
 
-
----
-
-Install Git on macOS
-
+*Install Git on macOS*
 brew install git
 
-
----
-
-5. Initial Git Configuration
+*Initial Git Configuration*
 
 Configure Git once after installation.
-
 git config --global user.name "Your Name"
 git config --global user.email "youremail@example.com"
 git config --list
 
+*Creating a Git Repository*
 
----
-
-6. Creating a Git Repository
-
-Initialize a Repository
-
+*Initialize a Repository*
 git init
 
-This creates a .git folder that stores the project history.
+This creates a `.git` folder that stores the project history.
 
-
----
-
-Check Repository Status
-
+*Check Repository Status*
 git status
 
-
----
-
-7. Git Workflow
+*Git Workflow*
 
 Git uses a three-stage workflow:
 
 1. Working Directory
-
-
 2. Staging Area
-
-
 3. Repository
 
+*Add Files to Staging Area*
+Add a specific file: `git add filename`
+Add all files: `git add .`
 
-
-
----
-
-Add Files to Staging Area
-
-Add a specific file:
-
-git add filename
-
-Add all files:
-
-git add .
-
-
----
-
-Commit Changes
-
+*Commit Changes*
 git commit -m "Commit message"
 
+*Working with GitHub (Remote Repositories)*
 
----
-
-8. Working with GitHub (Remote Repositories)
-
-Create a Repository on GitHub
-
+*Create a Repository on GitHub*
 1. Log in to GitHub
-
-
 2. Click New Repository
-
-
 3. Enter repository name
-
-
 4. Create the repository
 
-
-
-
----
-
-Connect Local Repository to GitHub
-
+*Connect Local Repository to GitHub*
 git remote add origin https://github.com/username/repository-name.git
 git remote -v
 
-
----
-
-9. Push Code to GitHub
-
+*Push Code to GitHub*
 git push -u origin main
 
-
----
-
-10. Pull Code from GitHub
-
+*Pull Code from GitHub*
 git pull origin main
 
+*Branching in Git*
 
----
-
-11. Branching in Git
-
-Create a new branch:
-
+*Create a new branch*
 git branch new-branch
 
-Switch to a branch:
-
+*Switch to a branch*
 git checkout new-branch
 
-Create and switch:
-
+*Create and switch*
 git checkout -b new-branch
 
-
----
-
-Merge Branches
-
+*Merge Branches*
 git checkout main
 git merge new-branch
 
-
----
-
-12. Collaboration Workflow
+*Collaboration Workflow*
 
 1. Clone repository
-
-
 2. Create a new branch
-
-
 3. Make changes
-
-
 4. Commit changes
-
-
 5. Push branch
-
-
 6. Create pull request
 
-
-
-
----
-
-Clone a Repository
-
+*Clone a Repository*
 git clone https://github.com/username/repository-name.git
 
+*All Common Git Commands*
 
----
+*Repository Setup*
+- `git init`
+- `git clone <url>`
 
-13. All Common Git Commands (Separated)
+*Configuration*
+- `git config --global user.name "Name"`
+- `git config --global user.email "Email"`
+- `git config --list`
 
-Repository Setup
+*File Tracking*
+- `git status`
+- `git add <file>`
+- `git add .`
+- `git rm <file>`
 
-git init
-git clone <url>
+*Commit History*
+- `git commit -m "message"`
+- `git log`
+- `git log --oneline`
 
-Configuration
+*Branching*
+- `git branch`
+- `git branch <name>`
+- `git checkout <branch>`
+- `git checkout -b <branch>`
+- `git merge <branch>`
 
-git config --global user.name "Name"
-git config --global user.email "Email"
-git config --list
+*Remote Repositories*
+- `git remote`
+- `git remote -v`
+- `git remote add origin <url>`
 
-File Tracking
+*Push & Pull*
+- `git push`
+- `git push -u origin main`
+- `git pull`
 
-git status
-git add <file>
-git add .
-git rm <file>
+*Undo Changes*
+- `git diff`
+- `git reset`
+- `git reset --hard`
+- `git checkout -- <file>`
 
-Commit History
+*Using .gitignore*
 
-git commit -m "message"
-git log
-git log --oneline
-
-Branching
-
-git branch
-git branch <name>
-git checkout <branch>
-git checkout -b <branch>
-git merge <branch>
-
-Remote Repositories
-
-git remote
-git remote -v
-git remote add origin <url>
-
-Push & Pull
-
-git push
-git push -u origin main
-git pull
-
-Undo Changes
-
-git diff
-git reset
-git reset --hard
-git checkout -- <file>
-
-
----
-
-14. Using .gitignore
-
-The .gitignore file tells Git which files or folders should not be tracked.
+The `.gitignore` file tells Git which files or folders should not be tracked.
 
 Example:
-
 node_modules/
 .env
 *.log
 dist/
 
+*Best Practices*
 
----
+- Commit small and meaningful changes
+- Write clear commit messages
+- Use branches for new features
+- Pull changes before pushing
+- Never store sensitive data
+- Keep repositories clean and organized
 
-15. Best Practices
+*Conclusion*
 
-Commit small and meaningful changes
-
-Write clear commit messages
-
-Use branches for new features
-
-Pull changes before pushing
-
-Never store sensitive data
-
-Keep repositories clean and organized
-
-
-
----
-
-16. Conclusion
-
-Git and GitHub are essential tools for modern development.
-They improve code quality, collaboration, and project management.
-
-Consistent practice is the key to mastering Git.
-
-
----
+Git and GitHub are essential tools for modern development. They improve code quality, collaboration, and project management. Consistent practice is the key to mastering Git.
