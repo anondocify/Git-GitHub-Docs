@@ -1,205 +1,218 @@
-*Complete Git & GitHub Guide*
+# Complete Git & GitHub Guide
 
-*Introduction*
+This comprehensive guide covers everything you need to know to get started with Git and GitHub on Windows, Linux, and macOS.
 
-*What is Git?*
-Git is a *distributed version control system* used to track changes in files and source code over time. It helps developers save different versions of a project, compare changes, and safely collaborate with others.
+## Table of Contents
+1. [Introduction](#introduction)
+2. [Prerequisites](#prerequisites)
+3. [Installation](#installation)
+    - [Windows](#installing-git-on-windows)
+    - [Linux](#installing-git-on-linux)
+    - [macOS](#installing-git-on-macos)
+4. [First-Time Configuration](#first-time-configuration)
+5. [GitHub Setup](#github-setup)
+6. [Core Git Workflow](#core-git-workflow)
+7. [Using GitHub Desktop](./GITHUB_DESKTOP_GUIDE.md)
+8. [Visual Reference](#visual-reference)
 
-- Track changes in files
-- Maintain complete project history
-- Revert to previous versions
-- Work safely without losing data
-- Collaborate with multiple developers
+---
 
-*What is GitHub?*
-GitHub is an *online platform* that hosts Git repositories. It allows developers to store projects remotely and collaborate using Git.
+## Introduction
 
-- Remote storage for repositories
-- Team collaboration
-- Pull requests and code reviews
-- Issue tracking
-- Public and private repositories
+### What is Git?
+Git is a **distributed version control system**. It tracks changes in your code, allowing you to:
+- Revert to previous versions.
+- Collaborate with others without overwriting their work.
+- Maintain a history of your project.
 
-*Git* → Version control tool
-*GitHub* → Online hosting service for Git repositories
+### What is GitHub?
+GitHub is a **cloud-based platform** that hosts Git repositories. It adds collaboration features like:
+- **Pull Requests**: Review code before merging.
+- **Issues**: Track bugs and tasks.
+- **Actions**: Automate testing and deployment.
 
-*Why Use Git and GitHub*
+---
 
-- Version control for source code
-- Team collaboration
-- Backup and recovery
-- Project sharing
-- Industry-standard development workflow
-- Open-source contribution
+## Prerequisites
+- A computer (Windows, Linux, or macOS).
+- An internet connection.
+- A [GitHub account](https://github.com/signup).
 
-*Prerequisites*
+---
 
-- Computer (Windows, Linux, or macOS)
-- Internet connection
-- GitHub account
-- Basic command-line knowledge (optional)
+## Installation
 
-*Installing Git*
+> **Offline Installers**: This repository contains offline installers for **Git (Windows)**, **GitHub Desktop**, and **VS Code**. Please refer to [RELEASES.md](./RELEASES.md) for direct access.
 
-*Check if Git Is Installed*
-git --version
+### Installing Git on Windows
 
-If Git is installed, the version number will appear.
+**Use Offline Installer (Recommended)**
+1.  Open [RELEASES.md](./RELEASES.md) in this repository.
+2.  Click on **Git-2.52.0-64-bit.exe** to run the installer.
 
-*Install Git on Windows*
-1. Download Git from https://git-scm.com
-2. Run the installer
-3. Use default settings
-4. Finish installation
 
-*Install Git on Linux*
+**Installation Wizard Steps:**
+1.  Run the installer.
+2.  **Select Components**: Ensure "Git Bash Here" and "Git GUI Here" are checked.
+3.  **Default Editor**: Choose Visual Studio Code (recommended) or Nano.
+4.  **Path Environment**: Select "Git from the command line and also from 3rd-party software".
+5.  **Line Ending**: Keep "Checkout Windows-style, commit Unix-style line endings".
+6.  Click "Install".
+
+> **Visual Aid**: Refer to the *Git Installer Mockup* generated in the chat to see what the component selection screen looks like.
+
+### Installing Git on Linux
+
+**Debian/Ubuntu:**
+```bash
 sudo apt update
 sudo apt install git
+```
 
-*Install Git on macOS*
+**Fedora:**
+```bash
+sudo dnf install git
+```
+
+> **Note**: An offline installer for **VS Code (.deb)** is available in [RELEASES.md](./RELEASES.md).
+
+**Verify Installation:**
+```bash
+git --version
+```
+
+### Installing Git on macOS
+
+**Option 1: Using Homebrew (Recommended)**
+If you don't have Homebrew, install it from [brew.sh](https://brew.sh).
+```bash
 brew install git
+```
 
-*Initial Git Configuration*
+**Option 2: Xcode Command Line Tools**
+Run this command and follow the prompts:
+```bash
+xcode-select --install
+```
 
-Configure Git once after installation.
+---
+
+## First-Time Configuration
+
+Open your terminal (Git Bash on Windows, Terminal on Mac/Linux) and run these commands. Replace the name and email with your GitHub details.
+
+```bash
+# Set your name
 git config --global user.name "Your Name"
-git config --global user.email "youremail@example.com"
+
+# Set your email
+git config --global user.email "your.email@example.com"
+
+# Verify configuration
 git config --list
+```
 
-*Creating a Git Repository*
+---
 
-*Initialize a Repository*
+## GitHub Setup
+
+### Creating a Repository
+
+1.  Log in to [GitHub.com](https://github.com).
+2.  Click the **+** icon in the top-right corner and select **New repository**.
+3.  **Repository Name**: Enter a unique name (e.g., `my-first-project`).
+4.  **Visibility**: Choose **Public** (visible to everyone) or **Private** (only you and contributors).
+5.  **Initialize**: Check "Add a README file" to start with a file.
+6.  Click **Create repository**.
+
+> **Visual Aid**: Refer to the *GitHub New Repo Mockup* generated in the chat for a visual guide of this page.
+
+### Connecting Local to Remote
+
+If you have a local folder you want to push to GitHub:
+
+```bash
+# Navigate to your project folder
+cd path/to/your/project
+
+# Initialize Git
 git init
 
-This creates a `.git` folder that stores the project history.
-
-*Check Repository Status*
-git status
-
-*Git Workflow*
-
-Git uses a three-stage workflow:
-
-1. Working Directory
-2. Staging Area
-3. Repository
-
-*Add Files to Staging Area*
-Add a specific file: `git add filename`
-Add all files: `git add .`
-
-*Commit Changes*
-git commit -m "Commit message"
-
-*Working with GitHub (Remote Repositories)*
-
-*Create a Repository on GitHub*
-1. Log in to GitHub
-2. Click New Repository
-3. Enter repository name
-4. Create the repository
-
-*Connect Local Repository to GitHub*
+# Add the remote origin (get this URL from your new GitHub repo)
 git remote add origin https://github.com/username/repository-name.git
-git remote -v
 
-*Push Code to GitHub*
+# Rename branch to main
+git branch -M main
+
+# Push your files
 git push -u origin main
+```
 
-*Pull Code from GitHub*
-git pull origin main
+---
 
-*Branching in Git*
+## Core Git Workflow
 
-*Create a new branch*
-git branch new-branch
+The basic cycle of using Git involves three steps: **Add**, **Commit**, **Push**.
 
-*Switch to a branch*
-git checkout new-branch
+### 1. Check Status
+See which files have changed.
+```bash
+git status
+```
 
-*Create and switch*
-git checkout -b new-branch
+### 2. Add Changes (Staging)
+Prepare files to be saved.
+```bash
+# Add a specific file
+git add filename.txt
 
-*Merge Branches*
-git checkout main
-git merge new-branch
+# Add all changes
+git add .
+```
 
-*Collaboration Workflow*
+### 3. Commit Changes (Saving)
+Save the snapshot of your files with a message.
+```bash
+git commit -m "Added a new feature"
+```
 
-1. Clone repository
-2. Create a new branch
-3. Make changes
-4. Commit changes
-5. Push branch
-6. Create pull request
+### 4. Push to GitHub
+Upload your commits to the cloud.
+```bash
+git push
+```
 
-*Clone a Repository*
-git clone https://github.com/username/repository-name.git
+### 5. Pull Changes
+Download changes made by others.
+```bash
+git pull
+```
 
-*All Common Git Commands*
+---
 
-*Repository Setup*
-- `git init`
-- `git clone <url>`
+## Using VS Code with Git
 
-*Configuration*
-- `git config --global user.name "Name"`
-- `git config --global user.email "Email"`
-- `git config --list`
+Visual Studio Code has built-in Git support that makes this process visual.
 
-*File Tracking*
-- `git status`
-- `git add <file>`
-- `git add .`
-- `git rm <file>`
+1.  **Open Source Control**: Click the icon that looks like a branching path (Ctrl+Shift+G).
+2.  **View Changes**: You will see a list of changed files. Clicking one shows a "Diff" (comparison) of what changed.
+3.  **Stage**: Click the **+** icon next to a file to stage it (`git add`).
+4.  **Commit**: Type a message in the box at the top and press **Commit** (Checkmark icon).
+5.  **Sync**: Click the **Sync Changes** button (arrows icon) in the status bar to Pull and Push.
 
-*Commit History*
-- `git commit -m "message"`
-- `git log`
-- `git log --oneline`
+> **Visual Aid**: Refer to the *VS Code Git Mockup* generated in the chat to see the Source Control interface.
 
-*Branching*
-- `git branch`
-- `git branch <name>`
-- `git checkout <branch>`
-- `git checkout -b <branch>`
-- `git merge <branch>`
+---
 
-*Remote Repositories*
-- `git remote`
-- `git remote -v`
-- `git remote add origin <url>`
+## Visual Reference
 
-*Push & Pull*
-- `git push`
-- `git push -u origin main`
-- `git pull`
+Since I cannot embed live screenshots from the web directly into this file, I have generated high-quality visual aids for you in our chat session. Please refer to them for:
 
-*Undo Changes*
-- `git diff`
-- `git reset`
-- `git reset --hard`
-- `git checkout -- <file>`
+1.  **Git Installation Wizard (Windows)**: Shows the component selection step.
+2.  **GitHub New Repository Page**: Shows the form for creating a repo.
+3.  **VS Code Git Interface**: Shows how changes and commits look in the editor.
 
-*Using .gitignore*
-
-The `.gitignore` file tells Git which files or folders should not be tracked.
-
-Example:
-node_modules/
-.env
-*.log
-dist/
-
-*Best Practices*
-
-- Commit small and meaningful changes
-- Write clear commit messages
-- Use branches for new features
-- Pull changes before pushing
-- Never store sensitive data
-- Keep repositories clean and organized
-
-*Conclusion*
-
-Git and GitHub are essential tools for modern development. They improve code quality, collaboration, and project management. Consistent practice is the key to mastering Git.
+For additional official screenshots, you can visit:
+- [Git SCM Book - Installing Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+- [GitHub Docs - Creating a Repo](https://docs.github.com/en/get-started/quickstart/create-a-repo)
+- [VS Code Version Control](https://code.visualstudio.com/docs/sourcecontrol/overview)
