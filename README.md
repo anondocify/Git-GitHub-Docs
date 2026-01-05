@@ -1,6 +1,6 @@
 # Complete Git & GitHub Guide
 
-This document explains Git and GitHub from scratch, covering installation, configuration, daily workflow, version control concepts, branching, collaboration, and best practices.  
+This guide explains **Git and GitHub from scratch**, covering installation, configuration, version control concepts, daily workflow, branching, collaboration, and best practices.  
 No prior knowledge is required.
 
 ---
@@ -9,50 +9,52 @@ No prior knowledge is required.
 
 ### What is Git?
 
-Git is a distributed version control system used to track changes in files and source code over time.  
-It allows developers to manage versions, revert changes, and collaborate efficiently.
+Git is a **distributed version control system** used to track changes in files and source code over time.  
+It helps developers save different versions of a project, compare changes, and safely collaborate with others.
 
-Git helps you:
-- Track file changes
-- Maintain code history
-- Work safely without data loss
-- Collaborate with multiple people
+Git helps you to:
+- Track changes in files  
+- Maintain complete project history  
+- Revert to previous versions  
+- Work safely without losing data  
+- Collaborate with multiple developers  
 
 ---
 
 ### What is GitHub?
 
-GitHub is a cloud-based platform that hosts Git repositories.  
-It provides tools for collaboration, code sharing, and project management.
+GitHub is an **online platform** that hosts Git repositories.  
+It allows developers to store projects remotely and collaborate using Git.
 
-GitHub allows:
-- Remote storage of repositories
-- Collaboration between developers
-- Issue tracking and pull requests
-- Public and private projects
+GitHub provides:
+- Remote storage for repositories  
+- Team collaboration  
+- Pull requests and code reviews  
+- Issue tracking  
+- Public and private repositories  
 
-Git is the tool.  
-GitHub is the online service.
+**Git** → Version control tool  
+**GitHub** → Online hosting service for Git repositories  
 
 ---
 
 ## 2. Why Use Git and GitHub
 
-- Source code version control
-- Team collaboration
-- Backup and recovery
-- Project sharing
-- Industry-standard workflow
-- Open-source contribution
+- Version control for source code  
+- Team collaboration  
+- Backup and recovery  
+- Project sharing  
+- Industry-standard development workflow  
+- Open-source contribution  
 
 ---
 
 ## 3. Prerequisites
 
-- A computer (Windows, Linux, or macOS)
-- Internet connection
-- GitHub account
-- Basic command-line knowledge (optional)
+- Computer (Windows, Linux, or macOS)  
+- Internet connection  
+- GitHub account  
+- Basic command-line knowledge (optional)  
 
 ---
 
@@ -62,9 +64,8 @@ GitHub is the online service.
 
 ```bash
 git --version
-```bash
 
-If Git is installed, the version number will be displayed.
+If Git is installed, the version number will appear.
 
 
 ---
@@ -80,7 +81,7 @@ Install Git on Windows
 3. Use default settings
 
 
-4. Complete the installation
+4. Finish installation
 
 
 
@@ -89,10 +90,9 @@ Install Git on Windows
 
 Install Git on Linux
 
-```bash
 sudo apt update
 sudo apt install git
-```bash
+
 
 ---
 
@@ -106,20 +106,11 @@ brew install git
 5. Initial Git Configuration
 
 Configure Git once after installation.
-```bash
-
-Set username:
 
 git config --global user.name "Your Name"
-
-Set email:
-
 git config --global user.email "youremail@example.com"
-
-Verify configuration:
-
 git config --list
-```bash
+
 
 ---
 
@@ -127,26 +118,23 @@ git config --list
 
 Initialize a Repository
 
-```bash
 git init
-```bash
 
-This creates a .git directory that stores version history.
+This creates a .git folder that stores the project history.
 
 
 ---
 
 Check Repository Status
 
-```bash
 git status
-```bash
+
 
 ---
 
 7. Git Workflow
 
-Git follows a three-stage workflow:
+Git uses a three-stage workflow:
 
 1. Working Directory
 
@@ -163,22 +151,21 @@ Git follows a three-stage workflow:
 
 Add Files to Staging Area
 
-Add a single file:
+Add a specific file:
 
-```bash
 git add filename
 
 Add all files:
 
 git add .
-```bash
+
 
 ---
 
 Commit Changes
-```bash
+
 git commit -m "Commit message"
-```bash
+
 
 ---
 
@@ -189,7 +176,7 @@ Create a Repository on GitHub
 1. Log in to GitHub
 
 
-2. Click "New Repository"
+2. Click New Repository
 
 
 3. Enter repository name
@@ -203,46 +190,41 @@ Create a Repository on GitHub
 ---
 
 Connect Local Repository to GitHub
-```bash
+
 git remote add origin https://github.com/username/repository-name.git
-
-Check remote:
-
 git remote -v
-```bash
+
 
 ---
 
-9. Pushing Code to GitHub
+9. Push Code to GitHub
 
 git push -u origin main
 
-The -u flag sets the upstream branch.
-
 
 ---
 
-10. Pulling Code from GitHub
-```bash
+10. Pull Code from GitHub
+
 git pull origin main
-```bash
+
 
 ---
 
 11. Branching in Git
 
-Create a Branch
-```bash
+Create a new branch:
+
 git branch new-branch
 
-Switch branch:
+Switch to a branch:
 
 git checkout new-branch
 
 Create and switch:
 
 git checkout -b new-branch
-```bash
+
 
 ---
 
@@ -259,7 +241,7 @@ git merge new-branch
 1. Clone repository
 
 
-2. Create a branch
+2. Create a new branch
 
 
 3. Make changes
@@ -271,7 +253,7 @@ git merge new-branch
 5. Push branch
 
 
-6. Create a pull request
+6. Create pull request
 
 
 
@@ -285,24 +267,65 @@ git clone https://github.com/username/repository-name.git
 
 ---
 
-13. Common Git Commands
+13. All Common Git Commands (Separated)
 
-Command	Description
+Repository Setup
 
-git status	Show file status
-git log	Show commit history
-git diff	Show changes
-git branch	List branches
-git checkout	Switch branches
-git reset	Undo changes
+git init
+git clone <url>
 
+Configuration
+
+git config --global user.name "Name"
+git config --global user.email "Email"
+git config --list
+
+File Tracking
+
+git status
+git add <file>
+git add .
+git rm <file>
+
+Commit History
+
+git commit -m "message"
+git log
+git log --oneline
+
+Branching
+
+git branch
+git branch <name>
+git checkout <branch>
+git checkout -b <branch>
+git merge <branch>
+
+Remote Repositories
+
+git remote
+git remote -v
+git remote add origin <url>
+
+Push & Pull
+
+git push
+git push -u origin main
+git pull
+
+Undo Changes
+
+git diff
+git reset
+git reset --hard
+git checkout -- <file>
 
 
 ---
 
 14. Using .gitignore
 
-The .gitignore file tells Git which files to ignore.
+The .gitignore file tells Git which files or folders should not be tracked.
 
 Example:
 
@@ -316,17 +339,17 @@ dist/
 
 15. Best Practices
 
-Commit small logical changes
+Commit small and meaningful changes
 
-Write meaningful commit messages
+Write clear commit messages
 
-Use branches for features
+Use branches for new features
 
 Pull changes before pushing
 
-Do not store sensitive data
+Never store sensitive data
 
-Keep repositories organized
+Keep repositories clean and organized
 
 
 
@@ -334,10 +357,10 @@ Keep repositories organized
 
 16. Conclusion
 
-Git and GitHub are essential tools for modern software development.
-Understanding version control improves code quality, collaboration, and project management.
+Git and GitHub are essential tools for modern development.
+They improve code quality, collaboration, and project management.
 
-Regular practice is the key to mastering Git.
+Consistent practice is the key to mastering Git.
 
 
 ---
