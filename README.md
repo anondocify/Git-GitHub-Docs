@@ -60,9 +60,8 @@ GitHub provides:
 
 ## 4. Installing Git
 
-### Check if Git Is Installed
+Check if Git Is Installed
 
-```bash
 git --version
 
 If Git is installed, the version number will appear.
